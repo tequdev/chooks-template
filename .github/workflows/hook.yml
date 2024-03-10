@@ -1,4 +1,4 @@
-name: Hook Fee
+name: Analyze Hooks
 on:
   push:
     branches: [ "main" ]
@@ -8,13 +8,13 @@ on:
 permissions:
   pull-requests: write
 jobs:
-  test:
+  hook:
     runs-on: ubuntu-latest
 
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: Test Actions
-        uses: tequdev/xrpl-hook-fee-actions@v1
+      - name: Analyze Hooks
+        uses: tequdev/xrpl-hook-fee-actions@v1.0.1-beta
         with:
           inPath: contracts
