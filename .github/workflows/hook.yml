@@ -2,8 +2,12 @@ name: Analyze Hooks
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'contracts/**'
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'contracts/**'
   workflow_dispatch:
 permissions:
   pull-requests: write
