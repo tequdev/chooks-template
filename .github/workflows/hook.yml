@@ -15,6 +15,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: Analyze Hooks
-        uses: tequdev/xrpl-hook-fee-actions@v1.0.1-beta
+        uses: tequdev/xrpl-hook-fee-actions@v1.0.1-beta.2
         with:
           inPath: contracts
