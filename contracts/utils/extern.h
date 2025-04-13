@@ -3,6 +3,10 @@
 #include <stdint.h>
 #ifndef HOOK_EXTERN
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 extern int32_t __attribute__((noduplicate))
 _g(uint32_t guard_id, uint32_t maxiter);
 
@@ -331,5 +335,10 @@ util_verify(
     uint32_t sread_len,
     uint32_t kread_ptr,
     uint32_t kread_len);
+
+#ifdef __cplusplus
+}
+#endif
+
 #define HOOK_EXTERN
 #endif // HOOK_EXTERN

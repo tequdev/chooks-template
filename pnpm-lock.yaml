@@ -12,8 +12,8 @@ importers:
         specifier: ^1.0.13
         version: 1.0.14
       '@transia/xrpl':
-        specifier: 2.7.3-alpha.24
-        version: 2.7.3-alpha.24
+        specifier: 2.7.3-alpha.27
+        version: 2.7.3-alpha.27
       '@xahau/hooks-cli':
         specifier: ^2.0.3
         version: 2.0.3
@@ -481,10 +481,6 @@ packages:
   '@transia/ripple-keypairs@1.1.8-alpha.0':
     resolution: {integrity: sha512-aU6sLozefJfrVZ8emYvUFIG6sxcYqRxGo7KzpLtoNgQVR2t8SoqlBoeV8qDH2ux7YXOwIbAvSZlN7WMlexXX+Q==}
     engines: {node: '>= 10'}
-
-  '@transia/xrpl@2.7.3-alpha.24':
-    resolution: {integrity: sha512-IqU+n9PRf4Ev6LPk5LT3Nes2a2j1QQYLcqXajSAow2tS5zfwRrCuyaPiPRROcuCOkXdu0j/zSurrPFxE3nJ2MQ==}
-    engines: {node: '>=10.13.0'}
 
   '@transia/xrpl@2.7.3-alpha.27':
     resolution: {integrity: sha512-+IbC4meiKmTFgt16gX69Ifg23sf3Rs6FvP5nCYuxJ+QT8fFWRmXKVxZK8xL4v4YVTiIYn/vBSNFT48zUu5C3TA==}
@@ -1182,18 +1178,6 @@ packages:
     resolution: {integrity: sha512-rwidmA1w3SE4j0E5MuIufFhyJPBDG7Nu71RkZor1p2+qHvJSZ9GYDA81AyleQcZbh/+V6HjeBdfnTZJm9rSeQQ==}
     engines: {node: '>= 12.0.0'}
 
-  ws@8.17.0:
-    resolution: {integrity: sha512-uJq6108EgZMAl20KagGkzCKfMEjxmKvZHG7Tlq0Z6nOky7YF7aq4mOx6xK8TJ/i1LeK4Qus7INktacctDgY8Ow==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
   ws@8.18.1:
     resolution: {integrity: sha512-RKW2aJZMXeMxVpnZ6bck+RswznaxmzdULiBr6KY7XkTnW8uvt0iT9H5DkHUChXrc+uurzwa0rVI16n/Xzjdz1w==}
     engines: {node: '>=10.0.0'}
@@ -1485,22 +1469,6 @@ snapshots:
       elliptic: 6.5.5
       hash.js: 1.1.7
 
-  '@transia/xrpl@2.7.3-alpha.24':
-    dependencies:
-      '@transia/ripple-address-codec': 4.2.8-alpha.0
-      '@transia/ripple-binary-codec': 1.4.6-alpha.9
-      '@transia/ripple-keypairs': 1.1.8-alpha.0
-      bignumber.js: 9.1.2
-      bip32: 2.0.6
-      bip39: 3.1.0
-      https-proxy-agent: 5.0.1
-      lodash: 4.17.21
-      ws: 8.17.0
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-
   '@transia/xrpl@2.7.3-alpha.27':
     dependencies:
       '@transia/ripple-address-codec': 4.2.8-alpha.0
@@ -1511,7 +1479,7 @@ snapshots:
       bip39: 3.1.0
       https-proxy-agent: 5.0.1
       lodash: 4.17.21
-      ws: 8.17.0
+      ws: 8.18.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -2324,8 +2292,6 @@ snapshots:
       stack-trace: 0.0.10
       triple-beam: 1.4.1
       winston-transport: 4.7.0
-
-  ws@8.17.0: {}
 
   ws@8.18.1: {}
 
