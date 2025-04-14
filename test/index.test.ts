@@ -1,4 +1,4 @@
-import { SetHookFlags, calculateHookOn } from '@transia/xrpl'
+import { SetHookFlags, calculateHookOn } from 'xahau'
 
 import {
   serverUrl,
