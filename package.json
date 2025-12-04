@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "c2wasm-cli contracts/index.c build/",
+    "build": "c2wasm-cli contracts/index.c build/ --headers contracts",
     "test": "LOG_LEVEL=error VITE_CJS_TRACE=true vitest",
     "xrpld:start": "xrpld-netgen up:standalone --protocol xahau --version 2025.12.1-release+2609",
     "xrpld:stop": "xrpld-netgen down:standalone --protocol xahau --version 2025.12.1-release+2609",
