@@ -18,8 +18,8 @@ importers:
         specifier: ^16.4.1
         version: 16.4.5
       xahau:
-        specifier: ^4.0.0
-        version: 4.0.0
+        specifier: ^4.0.3
+        version: 4.0.3
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.5.3
@@ -382,10 +382,6 @@ packages:
   '@noble/curves@1.8.1':
     resolution: {integrity: sha512-warwspo+UYUPep0Q+vtdVB4Ugn8GGQj8iyB3gnRWsztmUHTI3S1nhdiWNsPUGL0vud7JlRRk1XEu7Lq1KGTnMQ==}
     engines: {node: ^14.21.3 || >=16}
-
-  '@noble/hashes@1.4.0':
-    resolution: {integrity: sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==}
-    engines: {node: '>= 16'}
 
   '@noble/hashes@1.7.1':
     resolution: {integrity: sha512-B8XBPsn4vT/KJAGqDzbwztd+6Yte3P4V7iafm24bxgDe/mlRuK6xmWPuCNrKt2vDafZ8MfJLlchDG/vYafQEjQ==}
@@ -1229,16 +1225,16 @@ packages:
     resolution: {integrity: sha512-z1K0fQXCDdkPynBKNx3HsShd1B9HXbjn4lBTLpEnUD09zyY62kepqg4KJOrt1Pfc38PuBlqYTRz328ucejXiZg==}
     engines: {node: '>= 18'}
 
-  xahau-binary-codec@2.1.0:
-    resolution: {integrity: sha512-pb3YR6GQW6v/G3g/kDfgY5egT4XU6lqfEzYzf1LdoqmdS+UjmiVqz9UMQBNd5nKMrSYQuzy2ExfaAK5srRr5nQ==}
+  xahau-binary-codec@2.1.3:
+    resolution: {integrity: sha512-OSga17HEhorQn/g9VcQiMacHdE6dne4+4Jw7CwfQR6MjX4axY9chNf/PNQvmZyhQhpXnuYyaflK/C4iR04Gi+Q==}
     engines: {node: '>= 18'}
 
   xahau-keypairs@2.0.0:
     resolution: {integrity: sha512-8Gjv6pjCqH4nP/QnKzJk2beqyOPj1jfkCcSQrbPz0G/1G8Eby0Bp7SCxgEDboI5nEE6FSOVbRe+KfzCMO9Ft3Q==}
     engines: {node: '>= 18'}
 
-  xahau@4.0.0:
-    resolution: {integrity: sha512-IWk6gdrJTm8FvAtlY5TY3ofyD4n5143WP/GBYD/cByhR4iiygfVLtLyeB2Ujwzre/PjJZIEFqWR8eXKBie8oaw==}
+  xahau@4.0.3:
+    resolution: {integrity: sha512-89LMsxUErAOCnpj1P7OthFGhRdMx6rPzCHNw1HEC9MMRlrPIcDZ3rkIa2rnndYF53kwHkvGst/DVkdG8RkX7Rw==}
     engines: {node: '>=18.0.0'}
 
   yocto-queue@1.0.0:
@@ -1438,8 +1434,6 @@ snapshots:
     dependencies:
       '@noble/hashes': 1.7.1
 
-  '@noble/hashes@1.4.0': {}
-
   '@noble/hashes@1.7.1': {}
 
   '@rollup/rollup-android-arm-eabi@4.17.2':
@@ -1609,7 +1603,7 @@ snapshots:
 
   '@xrplf/isomorphic@1.0.1':
     dependencies:
-      '@noble/hashes': 1.4.0
+      '@noble/hashes': 1.7.1
       eventemitter3: 5.0.1
       ws: 8.18.1
     transitivePeerDependencies:
@@ -1688,7 +1682,7 @@ snapshots:
 
   bip39@3.1.0:
     dependencies:
-      '@noble/hashes': 1.4.0
+      '@noble/hashes': 1.7.1
 
   bn.js@4.12.0: {}
 
@@ -2409,7 +2403,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  xahau-binary-codec@2.1.0:
+  xahau-binary-codec@2.1.3:
     dependencies:
       '@xrplf/isomorphic': 1.0.1
       bignumber.js: 9.1.2
@@ -2427,7 +2421,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  xahau@4.0.0:
+  xahau@4.0.3:
     dependencies:
       '@scure/bip32': 1.6.2
       '@scure/bip39': 1.5.4
@@ -2436,7 +2430,7 @@ snapshots:
       bignumber.js: 9.1.2
       eventemitter3: 5.0.1
       xahau-address-codec: 5.0.0
-      xahau-binary-codec: 2.1.0
+      xahau-binary-codec: 2.1.3
       xahau-keypairs: 2.0.0
     transitivePeerDependencies:
       - bufferutil

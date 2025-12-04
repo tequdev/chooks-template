@@ -6,8 +6,8 @@
   "scripts": {
     "build": "c2wasm-cli contracts/index.c build/",
     "test": "LOG_LEVEL=error VITE_CJS_TRACE=true vitest",
-    "xrpld:start": "xrpld-netgen up:standalone --protocol xahau --version 2025.7.9-release+1951",
-    "xrpld:stop": "xrpld-netgen down:standalone --protocol xahau --version 2025.7.9-release+1951",
+    "xrpld:start": "xrpld-netgen up:standalone --protocol xahau --version 2025.12.1-release+2609",
+    "xrpld:stop": "xrpld-netgen down:standalone --protocol xahau --version 2025.12.1-release+2609",
     "trace": "docker logs --tail 100 -f xahau 2>&1 | cut -d ' ' -f 5- | grep -a -E 'Publishing ledger|HookInfo|HookTrace|HookError|HookEmit|preclaim result'"
   },
   "keywords": [],
@@ -17,7 +17,7 @@
     "@transia/hooks-toolkit": "^1.0.13",
     "@xahau/hooks-cli": "^2.0.3",
     "dotenv": "^16.4.1",
-    "xahau": "^4.0.0"
+    "xahau": "^4.0.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.5.3",
