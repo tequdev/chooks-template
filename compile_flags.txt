@@ -1,1 +1,3 @@
 -I./contracts/utils
+-Wno-pointer-to-int-cast
+-Wno-int-conversion
