@@ -28,7 +28,7 @@ describe('test', () => {
     await compileC('./contracts/index.c', 'build/')
     testContext = await setupClient(serverUrl)
     const hook = {
-      CreateCode: readHookBinaryHexFromNS('../build/index'),
+      CreateCode: readHookBinaryHexFromNS('../build/index', 'wasm'),
       Flags: SetHookFlags.hsfOverride,
       HookOn: calculateHookOn(['Invoke']),
       HookNamespace: hexNamespace(namespace),
