@@ -25,7 +25,9 @@ describe('test', () => {
   let testContext: XrplIntegrationTestContext
 
   beforeAll(async () => {
-    await compileC('./contracts/index.c', 'build/')
+    await compileC('./contracts/index.c', 'build/', {
+      headers: './contracts',
+    })
     testContext = await setupClient(serverUrl)
     const hook = {
       CreateCode: readHookBinaryHexFromNS('../build/index', 'wasm'),
