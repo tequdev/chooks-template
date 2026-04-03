@@ -29,33 +29,33 @@ describe('test', () => {
       headers: './contracts',
     })
     testContext = await setupClient(serverUrl)
-    const hook = {
+    const hook: iHook =  {
       CreateCode: readHookBinaryHexFromNS('../build/index', 'wasm'),
       Flags: SetHookFlags.hsfOverride,
       HookOn: calculateHookOn(['Invoke']),
       HookNamespace: hexNamespace(namespace),
       HookApiVersion: 0,
-    } as iHook
+    } 
     await setHooksV3({
       client: testContext.client,
-      seed: testContext.alice.seed,
+      seed: testContext.hook1.seed,
       hooks: [{ Hook: hook }],
     } as SetHookParams)
   })
 
   afterAll(async () => {
-    const clearHook = {
+    const clearHook: iHook = {
       Flags: SetHookFlags.hsfNSDelete,
       HookNamespace: hexNamespace(namespace),
-    } as iHook
+    }
     await clearHookStateV3({
       client: testContext.client,
-      seed: testContext.alice.seed,
+      seed: testContext.hook1.seed,
       hooks: [{ Hook: clearHook }],
     } as SetHookParams)
     await clearAllHooksV3({
       client: testContext.client,
-      seed: testContext.alice.seed,
+      seed: testContext.hook1.seed,
     } as SetHookParams)
     await teardownClient(testContext)
   })
@@ -65,6 +65,7 @@ describe('test', () => {
       tx: {
         TransactionType: 'Invoke',
         Account: testContext.alice.address,
+        Destination: testContext.hook1.address,
       },
       wallet: testContext.alice,
     })
