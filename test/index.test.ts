@@ -1,23 +1,22 @@
-import { SetHookFlags, calculateHookOn } from 'xahau'
-
+import fs from 'node:fs'
 import {
-  serverUrl,
-  type XrplIntegrationTestContext,
-  setupClient,
-  teardownClient,
-} from '@transia/hooks-toolkit/dist/npm/src/libs/xrpl-helpers'
-import { compileC } from '@xahau/hooks-cli'
-
-import {
-  type SetHookParams,
-  setHooksV3,
+  clearAllHooksV3,
+  clearHookStateV3,
   hexNamespace,
   type iHook,
   readHookBinaryHexFromNS,
-  clearAllHooksV3,
-  clearHookStateV3,
+  type SetHookParams,
+  setHooksV3,
   Xrpld,
 } from '@transia/hooks-toolkit'
+import {
+  serverUrl,
+  setupClient,
+  teardownClient,
+  type XrplIntegrationTestContext,
+} from '@transia/hooks-toolkit/dist/npm/src/libs/xrpl-helpers'
+import { compile } from 'jz-hook'
+import { calculateHookOn, SetHookFlags } from 'xahau'
 
 const namespace = 'namespace'
 
@@ -25,17 +24,17 @@ describe('test', () => {
   let testContext: XrplIntegrationTestContext
 
   beforeAll(async () => {
-    await compileC('./contracts/index.c', 'build/', {
-      headers: './contracts',
-    })
+    const hookCode = fs.readFileSync('./contracts/index.js', 'utf8')
+    const wasmBuffer = await compile(hookCode, { host: 'hook' })
+    fs.writeFileSync('build/index.wasm', wasmBuffer)
     testContext = await setupClient(serverUrl)
-    const hook: iHook =  {
+    const hook: iHook = {
       CreateCode: readHookBinaryHexFromNS('../build/index', 'wasm'),
       Flags: SetHookFlags.hsfOverride,
       HookOn: calculateHookOn(['Invoke']),
       HookNamespace: hexNamespace(namespace),
       HookApiVersion: 0,
-    } 
+    }
     await setHooksV3({
       client: testContext.client,
       seed: testContext.hook1.seed,
@@ -69,7 +68,7 @@ describe('test', () => {
       },
       wallet: testContext.alice,
     })
-    console.log(response.meta)
+    console.log(JSON.stringify(response.meta?.AffectedNodes, null, 2))
     expect(response.meta).toHaveProperty('HookExecutions')
   })
 })

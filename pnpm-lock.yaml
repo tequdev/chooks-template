@@ -17,6 +17,9 @@ importers:
       dotenv:
         specifier: ^16.4.1
         version: 16.4.5
+      jz-hook:
+        specifier: github:tequdev/jz-hook
+        version: https://codeload.github.com/tequdev/jz-hook/tar.gz/b6eba393afd2fc0b895213aeae08d219a156ab5d
       xahau:
         specifier: ^4.0.3
         version: 4.0.3
@@ -931,6 +934,11 @@ packages:
   jshooks-api@1.0.5:
     resolution: {integrity: sha512-iyPYrWOcTAQUrC+dH6diw8zosDT+CWRfL6ZbUApPB41WBjGKfIsimlJnvE4/NinxnCLTViUTr/SQFoCDKSOIxQ==}
 
+  jz-hook@https://codeload.github.com/tequdev/jz-hook/tar.gz/b6eba393afd2fc0b895213aeae08d219a156ab5d:
+    resolution: {tarball: https://codeload.github.com/tequdev/jz-hook/tar.gz/b6eba393afd2fc0b895213aeae08d219a156ab5d}
+    version: 0.2.1-hook.1
+    hasBin: true
+
   kuler@2.0.0:
     resolution: {integrity: sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==}
 
@@ -1142,6 +1150,9 @@ packages:
   strip-literal@2.1.0:
     resolution: {integrity: sha512-Op+UycaUt/8FbN/Z2TWPBLge3jWrP3xj10f3fnYxf052bKuS3EKs1ZQcVGjnEMdsNVAM+plXRdmjrZ/KgG3Skw==}
 
+  subscript@10.4.7:
+    resolution: {integrity: sha512-V6jUmjCDtNwhjY2gf9rQdTUg5YaM+C1RFoc6miM9udH1G895lUOQ479znV5IYh/ystvhVrDF5YooNFeal8iUIA==}
+
   text-hex@1.0.0:
     resolution: {integrity: sha512-uuVGNWzgJ4yhRaNSiubPY7OjISw4sw4E5Uv0wbjp+OzcbmVU/rsT8ujgcXJhn9ypzsgr5vlzpPqP+MBBKcGvbg==}
 
@@ -1262,6 +1273,10 @@ packages:
         optional: true
       jsdom:
         optional: true
+
+  watr@4.6.2:
+    resolution: {integrity: sha512-8n7bSLa7qh12elK7GuuV29UfKJe5xAOf0eRP+jroThvoZkPuSO35PPk9g9dheMnXyE5gOUrC66U018DKTtkmDw==}
+    hasBin: true
 
   which-typed-array@1.1.15:
     resolution: {integrity: sha512-oV0jmFtUky6CXfkqehVvBP/LSWJ2sy4vWMioiENyJLePrBO/yKyV9OyJySfAKosh+RYkIl5zJCNZ8/4JncrpdA==}
@@ -2162,6 +2177,11 @@ snapshots:
       - '@swc/core'
       - '@swc/wasm'
 
+  jz-hook@https://codeload.github.com/tequdev/jz-hook/tar.gz/b6eba393afd2fc0b895213aeae08d219a156ab5d:
+    dependencies:
+      subscript: 10.4.7
+      watr: 4.6.2
+
   kuler@2.0.0: {}
 
   local-pkg@0.5.0:
@@ -2393,6 +2413,8 @@ snapshots:
     dependencies:
       js-tokens: 9.0.0
 
+  subscript@10.4.7: {}
+
   text-hex@1.0.0: {}
 
   tiny-secp256k1@1.1.6:
@@ -2509,6 +2531,8 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+
+  watr@4.6.2: {}
 
   which-typed-array@1.1.15:
     dependencies:
